@@ -434,6 +434,7 @@ libuae_a_SOURCES = \
 	src/include/uae/limits.h \
 	src/include/uae/log.h \
 	src/include/uae/memory.h \
+	src/include/uae/redpill.h \
 	src/include/uae/mman.h \
 	src/include/uae/parser.h \
 	src/include/uae/patch.h \
@@ -476,6 +477,7 @@ libuae_a_SOURCES = \
 	src/mame/tm34010/tms34010.cpp \
 	src/mame/tm34010/tms34010.h \
 	src/memory.cpp \
+	src/redpill.cpp \
 	src/native2amiga.cpp \
 	src/ncr9x_scsi.cpp \
 	src/ncr_scsi.cpp \

@@ -14,6 +14,7 @@
 #include "options.h"
 #include "uae.h"
 #include "uae/memory.h"
+#include "uae/redpill.h"
 #include "rommgr.h"
 #include "ersatz.h"
 #include "zfile.h"
@@ -1831,6 +1832,11 @@ static void add_shmmaps (uae_u32 start, addrbank *what)
 
 bool mapped_malloc (addrbank *ab)
 {
+	ab->flags |= ABFLAG_SHARED;
+	ab->baseaddr = (uae_u8*) shm_new (sizeof(uae_u8 ) * (ab->allocated), ab->name);
+	return ab->baseaddr != NULL;
+	// !! until found any bug caused by the above code, the rest code is out !!
+
 #ifdef FSUAE
 	write_log(_T("MMAN: mapped_malloc 0x%08x start=0x%08x %s (%s)\n"),
 			  ab->allocated, ab->start, ab->name, ab->label);

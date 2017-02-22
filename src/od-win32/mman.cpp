@@ -603,6 +603,10 @@ void free_shm (void)
 
 void mapped_free (addrbank *ab)
 {
+	printf( "\x1b[0;32m %s :: %d %s %s\n \x1b[0m", __func__, ab->allocated, ab->name, (ab->flags & ABFLAG_SHARED ? "\x1b[1;34m [SHARED]" : "") );
+	if(ab->flags & ABFLAG_SHARED)
+		return;
+
 	shmpiece *x = shm_start;
 	bool rtgmem = (ab->flags & ABFLAG_RTG) != 0;
 

@@ -1,0 +1,14 @@
+[config]
+amiga_model = A500
+#cpu = 68000
+#chip_memory = 512
+#slow_memory = 512
+#fast_memory = 0
+#zorro_iii_memory = 0
+# fix the paths below:
+kickstart_file = ~/amiga/roms/kick13.rom
+floppy_drive_0 = ~/amiga/disks/disk1.adf
+# to swap disks (F12) a disk list needed:
+floppy_image_0 = ~/amiga/disks/disk1.adf
+floppy_image_1 = ~/amiga/disks/disk2.adf
+floppy_image_2 = ~/amiga/disks/disk3.adf
